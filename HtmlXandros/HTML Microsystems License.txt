@@ -1,0 +1,20 @@
+Html Microsystems Software License
+
+You may use this software any way you like, but you should
+probably give HTML Microsystems Credit, because that's
+the right thing to do!
+
+Go ahead and download the source and make something
+awesome with our code! It's open source, so use
+the source however you would like!
+
+HTML Microsystems is not responsible for
+any malicious use of open source
+software.
+
+There is NOTHING in the Html Microsystems hosted
+web app that is not in the source code, PERIOD!
+If there is, I will fire whichever one of my staff
+didnt make the software completely open source :P
+
+

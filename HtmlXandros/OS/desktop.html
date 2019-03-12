@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>HtmlXandros Desktop</title>
+
+        <link href="../lib/jquery-ui/jquery-ui.structure.min.css" rel="stylesheet" type="text/css" />
+        <link id="themecss" href="../src/jquery-lwd/themes/windows2000/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
+        <link href="../src/jquery-lwd/jquery-lwd.structure.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="../lib/jquery-ui/jquery.min.js"></script>
+        <script type="text/javascript" src="../lib/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../src/jquery-lwd/jquery-lwd.js"></script>
+    </head>
+
+    <body>
+        <div id="taskbar">
+            <div id="lwd-taskbar-left" style="display: inline-block">
+                <button id="addbutton" class="ui-button lwd-taskbar-button ui-state-default ui-corner-all">Launch</button>
+                <div class="taskbar-spacer"></div>
+            </div>
+        </div>
+
+        <!--<label for="theme">Theme:</label>
+        <select id="theme">
+            <option value="">--- please choose</option>
+            <option value="../src/jquery-lwd/themes/windows2000/jquery-ui.theme.css">Windows 2000</option>
+            <option value="../src/jquery-lwd/themes/material/jquery-ui.theme.css">Material</option>
+        </select>-->
+    </body>
+
+    <script>
+        $(document).ready(function () {
+            var intCounter = 1;
+
+            $('#addbutton').click(function () {
+                var $objWindow = $('<div class="window"><iframe src="appframe.html" style="width:100%; height:100%;"></iframe></div>');
+                var intRandom = Math.floor((Math.random() * 12) + 1);
+                $($objWindow).appendTo('body');
+                $objWindow.window({
+                    title: 'HtmlXandros AppFrame '+intCounter,
+                    width: 480,
+                    height: 320,
+                    position: {
+                        my: 'left+'+200+', top+'+200,
+                        at: 'left top',
+                        of: window
+                    },
+                    maximizable: true,
+                    minimizable: true,
+
+                    //icon: '../src/jquery-lwd/themes/windows2000/images/default.png'
+                    icon: '../src/jquery-lwd/themes/windows2000/images/icons/'+intRandom+'.png'
+                });
+
+                intCounter++;
+            });
+
+            $('#taskbar').taskbar();
+
+            $('#theme').change(function () {
+                $("head link#themecss").attr("href", $(this).val());
+            });
+        });
+    </script>
+
+</html>
